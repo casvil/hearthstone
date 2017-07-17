@@ -1,13 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card } from 'components';
+import Card from '../components/card';
 
-const CardContainer = ({}) => {
-  componentWillMount() {
-
-  }
+class CardContainer extends Component {
   return (
-    <Card onClick={handleClick}></Card>
+    <Card></Card>
   );
 }
 

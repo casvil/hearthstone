@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const Card = () => {
-  return (
-    <div></div>
-  );
+class Card extends Component {
+  render() {
+    return (
+      <div></div>
+    );
+  }
 }
 
 Card.propTypes = {

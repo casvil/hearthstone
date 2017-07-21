@@ -4,6 +4,8 @@ import Card from '../../components/card';
 
 class CardContainer extends Component {
 
+  // this component needs to be smarter
+
   render() {
     return (
       <Card card={this.props.card} />

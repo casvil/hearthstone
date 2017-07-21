@@ -30,7 +30,8 @@
   "babel": {
     "presets": [
       "env",
-      "react"
+      "react",
+      "jasmine"
     ]
   }
 }

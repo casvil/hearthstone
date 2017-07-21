@@ -31,10 +31,16 @@ class App extends Component {
 
   render() {
     if (!this.state.cards) {
-      return (<p>Loading ... </p>);
+      return (
+        <div className="App">
+          <div className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h2>Welcome to React Hearthstone</h2>
+          </div>
+          <p>Loading ... </p>
+        </div>
+      );
     }
-    console.log(this.state.cards.Naxxramas[0]);
-    console.log(this.state.cards.Basic[10]);
     return (
       <div className="App">
         <div className="App-header">

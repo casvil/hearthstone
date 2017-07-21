@@ -1,29 +1,49 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
 import Card from './containers/card/';
-import unirest from 'unirest';
 // mock data
-const mockCard = require('./mock/single-card-response');
+// const mockCard = require('./mock/single-card-response');
 
 class App extends Component {
+  constructor(props) {
+    super(props);
 
-  componentDidMount() {
-    unirest.get("https://omgvamp-hearthstone-v1.p.mashape.com/cards")
-    .header("X-Mashape-Key", "GmSwaTQi8VmshabahQuB1zaqxcF4p1DB8CpjsnCHEXjhNhtpaI")
-    .end(function (result) {
-      console.log(result.status, result.headers, result.body);
-    });
+    this.state = {
+      cards: undefined,
+    };
   }
+
+  componentWillMount() {
+    axios.get('https://omgvamp-hearthstone-v1.p.mashape.com/cards',
+      { headers:
+        { 'X-Mashape-Key': 'GmSwaTQi8VmshabahQuB1zaqxcF4p1DB8CpjsnCHEXjhNhtpaI' },
+      })
+      .then((response) => {
+        // If request is good...
+        this.setState({
+          cards: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log('Error: ', error);
+      });
+  }
+
   render() {
-    console.log(mockCard);
+    if (!this.state.cards) {
+      return (<p>Loading ... </p>);
+    }
+    console.log(this.state.cards.Naxxramas[0]);
+    console.log(this.state.cards.Basic[10]);
     return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React Hearthstone</h2>
         </div>
-        <Card mockCard={mockCard[0]} cardSet={mockCard[0].cardSet}></Card>
+        <Card card={this.state.cards.Naxxramas[0]} />
       </div>
     );
   }

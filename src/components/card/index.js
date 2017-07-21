@@ -4,11 +4,10 @@ import PropTypes from 'prop-types';
 class Card extends Component {
 
   render() {
-    console.log(this.props);
     return (
       <div>
-        <img src={this.props.mockCard.img} alt="" />
-        <img src={this.props.mockCard.imgGold} alt="" />
+        <img src={this.props.card.img} alt="" />
+        <img src={this.props.card.imgGold} alt="" />
       </div>
     );
   }
@@ -16,9 +15,7 @@ class Card extends Component {
 }
 
 Card.propTypes = {
-  // card: PropTypes.object.isRequired,
-  mockCard: PropTypes.object.isRequired,
-  type: PropTypes.string,
+  card: PropTypes.object.isRequired,
 };
 
 export default Card;

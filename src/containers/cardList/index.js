@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Card from '../../components/card';
 
-class CardContainer extends Component {
-
+class CardListContainer extends Component {
   render() {
     return (
       <Card card={this.props.card} />
@@ -12,8 +11,8 @@ class CardContainer extends Component {
 
 }
 
-CardContainer.propTypes = {
+CardListContainer.propTypes = {
   card: PropTypes.object.isRequired,
 };
 
-export default CardContainer;
+export default CardListContainer;

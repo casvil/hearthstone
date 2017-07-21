@@ -3,8 +3,6 @@ import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
 import Card from './containers/card/';
-// mock data
-// const mockCard = require('./mock/single-card-response');
 
 class App extends Component {
   constructor(props) {
@@ -43,7 +41,14 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React Hearthstone</h2>
         </div>
-        <Card card={this.state.cards.Naxxramas[0]} />
+        <div>
+          <h1>Single Card</h1>
+          <Card card={this.state.cards.Naxxramas[0]} />
+        </div>
+        <div>
+          <h1>Naxxramas Card List</h1>
+          {this.state.cards.Naxxramas.map(card => <Card card={card} />)}
+        </div>
       </div>
     );
   }

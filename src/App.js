@@ -3,10 +3,12 @@ import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
 import Card from './containers/card/';
+const json = require('./mock/cards.json');
 
 class App extends Component {
   constructor(props) {
     super(props);
+    console.log(json);
 
     this.state = {
       error: null,

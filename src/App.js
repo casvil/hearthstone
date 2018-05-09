@@ -5,7 +5,7 @@ import Card from './containers/card/';
 import logo from './logo.svg';
 import './App.css';
 
-import json from './mock/cards.json';
+// import json from './mock/cards.json';
 
 class App extends Component {
   constructor(props) {
@@ -15,9 +15,10 @@ class App extends Component {
       error: null,
       isLoaded: false,
       items: undefined
+      // items: json
     };
 
-    axios.get('https://omgvamp-hearthstone-v1.p.mashape.com/cards',
+    axios.get('https://omgvamp-hearthstone-v1.p.mashape.com/cards?locale=esES',
       { headers:
         { 'X-Mashape-Key': 'GmSwaTQi8VmshabahQuB1zaqxcF4p1DB8CpjsnCHEXjhNhtpaI' },
       })
@@ -51,9 +52,10 @@ class App extends Component {
           <h2>Welcome to React Hearthstone</h2>
         </div>
         <div>
-          <h1>Naxxramas Card List</h1>
-          {Object.keys(this.state.items).forEach(item => console.log(item))}
-          {this.state.items.Naxxramas.map(card => <Card card={card} />)}
+          {/* How to paint ALL cards */}
+          {/* {Object.keys(this.state.items).map(item => this.state.items[item].map((card, i) => <Card key={i} card={card} />))} */}
+          {/* How to paint an specific collection */}
+          {/* {this.state.items.Naxxramas.map((card, i) => <Card key={i} card={card} />)} */}
         </div>
       </div>
     );

@@ -3,12 +3,19 @@ import React, { Component } from 'react';
 class Card extends Component {
 
   render() {
-
-    return (
-      <div>
-        <img src={this.props.card.img} alt="" />
-      </div>
-    );
+    if (this.props.card.img) {
+      return (
+        <div>
+          <img src={this.props.card.img} alt="" />
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <h1>{this.props.card.name}</h1>
+        </div>
+      );
+    }
   }
 
 }

@@ -9,7 +9,9 @@ class App extends Component {
     super(props);
 
     this.state = {
-      cards: undefined,
+      error: null,
+      isLoaded: false,
+      items: undefined
     };
   }
 
@@ -19,18 +21,18 @@ class App extends Component {
         { 'X-Mashape-Key': 'GmSwaTQi8VmshabahQuB1zaqxcF4p1DB8CpjsnCHEXjhNhtpaI' },
       })
       .then((response) => {
-        // If request is good...
         this.setState({
-          cards: response.data,
+          isLoaded: true,
+          items: response.data,
         });
       })
       .catch((error) => {
-        console.log('Error: ', error);
+        console.log(error);
       });
   }
 
   render() {
-    if (!this.state.cards) {
+    if (!this.state.isLoaded) {
       return (
         <div className="App">
           <div className="App-header">
@@ -48,12 +50,9 @@ class App extends Component {
           <h2>Welcome to React Hearthstone</h2>
         </div>
         <div>
-          <h1>Single Card</h1>
-          <Card card={this.state.cards.Naxxramas[0]} />
-        </div>
-        <div>
           <h1>Naxxramas Card List</h1>
-          {this.state.cards.Naxxramas.map(card => <Card card={card} />)}
+          {Object.keys(this.state.items).forEach(item => console.log(item))}
+          {this.state.items.Naxxramas.map(card => <Card card={card} />)}
         </div>
       </div>
     );

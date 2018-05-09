@@ -6,7 +6,7 @@ class Card extends Component {
     if (this.props.card.img) {
       return (
         <div>
-          <img src={this.props.card.img} alt="" />
+          <img onClick={this.props.onClick(this.props.card)} src={this.props.card.img} alt="" />
         </div>
       );
     } else {
@@ -17,7 +17,6 @@ class Card extends Component {
       );
     }
   }
-
 }
 
 export default Card;

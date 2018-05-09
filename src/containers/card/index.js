@@ -4,18 +4,19 @@ import Card from '../../components/card';
 
 class CardContainer extends Component {
 
-  // this component needs to be smarter
+  onClick() {
+    alert(this.props.card.name + ' selected!');
+  }
 
   render() {
     return (
-      <Card card={this.props.card} />
+      <Card onClick={() => this.onClick.bind(this)} card={this.props.card} />
     );
   }
-
 }
 
 CardContainer.propTypes = {
-  card: PropTypes.object.isRequired,
+  card: PropTypes.object.isRequired
 };
 
 export default CardContainer;

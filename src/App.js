@@ -51,11 +51,17 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React Hearthstone</h2>
         </div>
+        <div className="heroes">
+          {Object.keys(this.state.sets)
+            .map(nameSet => this.state.sets[nameSet]
+              .filter(set => set.type === 'Hero' && set.cardSet === 'Basic')
+              .map((card, i) => <Card key={i} card={card} />))}
+        </div>
         <div>
           {/* How to paint ALL cards */}
-          {/* {Object.keys(this.state.items).map(item => this.state.items[item].map((card, i) => <Card key={i} card={card} />))} */}
+          {/* {Object.keys(this.state.sets).map(item => this.state.sets[item].map((card, i) => <Card key={i} card={card} />))} */}
           {/* How to paint an specific collection */}
-          {/* {this.state.items.Naxxramas.map((card, i) => <Card key={i} card={card} />)} */}
+          {/* {this.state.sets.Naxxramas.map((card, i) => <Card key={i} card={card} />)} */}
         </div>
       </div>
     );

@@ -1,23 +1,22 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+
+import Card from './containers/card/';
 import logo from './logo.svg';
 import './App.css';
-import Card from './containers/card/';
-const json = require('./mock/cards.json');
+
+import json from './mock/cards.json';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    console.log(json);
 
     this.state = {
       error: null,
       isLoaded: false,
       items: undefined
     };
-  }
 
-  componentWillMount() {
     axios.get('https://omgvamp-hearthstone-v1.p.mashape.com/cards',
       { headers:
         { 'X-Mashape-Key': 'GmSwaTQi8VmshabahQuB1zaqxcF4p1DB8CpjsnCHEXjhNhtpaI' },

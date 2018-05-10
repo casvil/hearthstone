@@ -19,7 +19,8 @@
     "chai": "^4.1.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.2",
-    "mocha": "^3.4.2"
+    "mocha": "^3.4.2",
+    "react-redux": "^5.0.7"
   },
   "scripts": {
     "start": "react-scripts start",

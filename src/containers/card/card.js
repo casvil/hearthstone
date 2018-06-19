@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import Card from '../../components/card/card';
@@ -17,4 +18,8 @@ CardContainer.propTypes = {
   card: PropTypes.object.isRequired,
 };
 
-export default CardContainer;
+const mapStateToProps = state => ({
+  cards: state.cardReducer.cards,
+});
+
+export default connect(mapStateToProps)(CardContainer);

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import HeroList from './containers/hero-list/hero-list';
 import { fetchCards } from './actions/cardActions';
+import HeroList from './containers/hero-list/hero-list';
 
 import logo from './logo.svg';
 import './App.css';

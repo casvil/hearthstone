@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import HeroList from './containers/hero-list/hero-list';
 import { fetchCards } from './actions/cardActions';
 
-import Card from './containers/card/card';
 import logo from './logo.svg';
 import './App.css';
 
@@ -40,22 +40,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React Hearthstone</h2>
         </div>
-        <div className="heroes">
-          {Object.keys(this.props.cards).map(nameSet =>
-            this.props.cards[nameSet]
-              .filter(set => set.type === 'Hero' && set.cardSet === 'Basic')
-              .map((card, i) => <Card key={i} card={card} />),
-          )}
-        </div>
-        <div>
-          {/* How to paint ALL cards */}
-          {/*
-            {Object.keys(this.props.cards)
-              .map(item => this.props.cards[item].map((card, i) => <Card key={i} card={card} />))}
-            */}
-          {/* How to paint an specific collection */}
-          {/* {this.props.cards.Naxxramas.map((card, i) => <Card key={i} card={card} />)} */}
-        </div>
+        <HeroList />
       </div>
     );
   }

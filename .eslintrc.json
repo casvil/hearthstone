@@ -7,7 +7,9 @@
     "mocha": true
   },
   "extends": "airbnb",
+  "parser": "babel-eslint",
   "rules": {
+    "no-undef": 0,
     "no-underscore-dangle": 0,
     "import/prefer-default-export": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],

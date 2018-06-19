@@ -1,0 +1,13 @@
+.heroes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.heroes > div {
+  flex: 1;
+}
+
+.heroes > div > img {
+  width: 100%;
+}

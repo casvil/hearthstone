@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import Card from '../card/card';
+import './hero-list.css';
 
 class HeroList extends Component {
   render() {

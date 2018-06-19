@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { fetchCards } from './actions/cardActions';
+
+import Header from './containers/header/header';
 import HeroList from './containers/hero-list/hero-list';
 
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -19,10 +20,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React Hearthstone</h2>
-        </div>
+        <Header />
         <HeroList />
       </div>
     );

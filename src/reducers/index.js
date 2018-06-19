@@ -4,6 +4,6 @@ import cardReducer from './cardReducer';
 import userReducer from './userReducer';
 
 export default combineReducers({
-  card: cardReducer,
-  user: userReducer,
+  cardReducer,
+  userReducer,
 });

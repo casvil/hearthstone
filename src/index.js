@@ -9,6 +9,8 @@ import App from './App';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
+require('dotenv').config();
+
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={routerReducer}>

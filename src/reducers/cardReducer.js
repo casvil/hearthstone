@@ -1,4 +1,4 @@
-import { FETCH_CARDS } from '../actions/types';
+import { FETCH_CARDS_COMPLETE } from '../actions/types';
 
 const initialState = {
   cards: {},
@@ -6,7 +6,7 @@ const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case FETCH_CARDS:
+    case FETCH_CARDS_COMPLETE:
       return {
         ...state.user,
         cards: action.payload,

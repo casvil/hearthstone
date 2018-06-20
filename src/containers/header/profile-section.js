@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
+import { register, login } from '../../actions/userActions';
 
 class ProfileSection extends Component {
   handleRegister = () => {
-    console.log('navigate to register');
+    this.props.register();
   };
 
   handleLogIn = () => {
-    console.log('navigate to login');
+    this.props.login();
   };
 
   render() {
@@ -19,4 +23,11 @@ class ProfileSection extends Component {
   }
 }
 
-export default ProfileSection;
+ProfileSection.propTypes = {
+  register: PropTypes.func.isRequired,
+};
+
+export default connect(
+  null,
+  { register, login },
+)(ProfileSection);

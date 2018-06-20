@@ -6,10 +6,10 @@ import thunk from 'redux-thunk';
 import combineReducers from './reducers/index';
 
 const initialState = {};
-const routerReducer = createBrowserHistory();
+export const routerReducer = createBrowserHistory(); // history object provided to ConnectedRouter
 const middleware = [thunk, routerMiddleware(routerReducer)];
 
-const store = createStore(
+export const store = createStore(
   connectRouter(routerReducer)(combineReducers), // new root reducer with router state
   initialState,
   compose(
@@ -19,5 +19,3 @@ const store = createStore(
       : compose,
   ),
 );
-
-export default store;

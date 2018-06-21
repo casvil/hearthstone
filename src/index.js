@@ -9,6 +9,7 @@ import App from './App';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
+// set up .env variables
 require('dotenv').config();
 
 ReactDOM.render(

@@ -25,6 +25,7 @@ class ProfileSection extends Component {
 
 ProfileSection.propTypes = {
   register: PropTypes.func.isRequired,
+  login: PropTypes.func.isRequired,
 };
 
 export default connect(

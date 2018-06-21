@@ -1,5 +1,4 @@
 import { FETCH_CARDS_INITIATE, FETCH_CARDS_COMPLETE, FETCH_CARDS_ERROR } from './types';
-// import json from '../mock/cards.json';
 
 const { REACT_APP_API_KEY } = process.env;
 

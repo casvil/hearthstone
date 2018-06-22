@@ -12,6 +12,11 @@ export const register = (/* formData */) => (dispatch) => {
   dispatch(push('/register'));
 };
 
+export const home = (/* formData */) => (dispatch) => {
+  /* do something before redirection */
+  dispatch(push('/'));
+};
+
 export const setUserDetailsHero = hero => (dispatch) => {
   dispatch({
     type: USER_SET_HERO,
